@@ -1,28 +1,64 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Task } from 'src/app/models/task.model';
 
 @Component({
-  selector: "app-task",
+  selector: 'app-task',
   template: `
-    <div className="list-item">
-      <label for="title" [attr.aria-label]="task.title + ''">
+    <div class="list-item {{ task?.state }}">
+      <label
+        [attr.aria-label]="'archiveTask-' + task?.id"
+        for="checked-{{ task?.id }}"
+        class="checkbox"
+      >
+        <input
+          type="checkbox"
+          disabled="true"
+          [defaultChecked]="task?.state === 'TASK_ARCHIVED'"
+          name="checked-{{ task?.id }}"
+          id="checked-{{ task?.id }}"
+        />
+        <span class="checkbox-custom" (click)="onArchive(task?.id)"></span>
+      </label>
+      <label
+        [attr.aria-label]="task?.title + ''"
+        for="title-{{ task?.id }}"
+        class="title"
+      >
         <input
           type="text"
-          [value]="task.title"
+          [value]="task?.title"
           readonly="true"
-          id="title"
-          name="title"
+          id="title-{{ task?.id }}"
+          name="title-{{ task?.id }}"
+          placeholder="Input title"
         />
       </label>
+      <button
+        *ngIf="task?.state !== 'TASK_ARCHIVED'"
+        class="pin-button"
+        [attr.aria-label]="'pinTask-' + task?.id"
+        (click)="onPin(task?.id)"
+      >
+        <span class="icon-star"></span>
+      </button>
     </div>
   `,
-  styleUrls: ["./task.component.css"],
+  styleUrls: ['./task.component.css'],
 })
 export class TaskComponent {
   /**
    * The shape of the task object
    */
-  @Input() task: any;
+  @Input() task?: Task;
 
   @Output() onPinTask = new EventEmitter<Event>();
   @Output() onArchiveTask = new EventEmitter<Event>();
+
+  onPin(id: any) {
+    this.onPinTask.emit(id);
+  }
+
+  onArchive(id: any) {
+    this.onArchiveTask.emit(id);
+  }
 }
