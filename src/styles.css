@@ -365,7 +365,7 @@ textarea {
 .loading-item .glow-checkbox,
 .loading-item .glow-text span {
   animation: glow 1.5s ease-in-out infinite;
-  background: #eee;
+  background: #afacac;
   color: transparent;
   cursor: progress;
   display: inline-block;
