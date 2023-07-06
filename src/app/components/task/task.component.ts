@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Task } from 'src/app/models/task.model';
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Task } from "src/app/models/task.model";
 
 @Component({
-  selector: 'app-task',
+  selector: "app-task",
   template: `
     <div class="list-item {{ task?.state }}">
       <label
@@ -31,6 +31,7 @@ import { Task } from 'src/app/models/task.model';
           id="title-{{ task?.id }}"
           name="title-{{ task?.id }}"
           placeholder="Input title"
+          style="background: red;"
         />
       </label>
       <button
@@ -43,7 +44,7 @@ import { Task } from 'src/app/models/task.model';
       </button>
     </div>
   `,
-  styleUrls: ['./task.component.css'],
+  styleUrls: ["./task.component.css"],
 })
 export class TaskComponent {
   /**
