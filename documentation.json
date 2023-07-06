@@ -1480,21 +1480,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    tasks: [\n      { ...TaskStories.Default.args?.task, id: '1', title: 'Task 1' },\n      { ...TaskStories.Default.args?.task, id: '2', title: 'Task 2' },\n      { ...TaskStories.Default.args?.task, id: '3', title: 'Task 3' },\n      { ...TaskStories.Default.args?.task, id: '4', title: 'Task 4' },\n      { ...TaskStories.Default.args?.task, id: '5', title: 'Task 5' },\n      { ...TaskStories.Default.args?.task, id: '6', title: 'Task 6' },\n    ],\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/components/task/Task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    task: {\n      id: \"1\",\n      title: \"Test Task\",\n      state: \"TASK_INBOX\",\n    },\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tasks: [\n      { ...TaskStories.Default.args?.task, id: '1', title: 'Task 1' },\n      { ...TaskStories.Default.args?.task, id: '2', title: 'Task 2' },\n      { ...TaskStories.Default.args?.task, id: '3', title: 'Task 3' },\n      { ...TaskStories.Default.args?.task, id: '4', title: 'Task 4' },\n      { ...TaskStories.Default.args?.task, id: '5', title: 'Task 5' },\n      { ...TaskStories.Default.args?.task, id: '6', title: 'Task 6' },\n    ],\n  },\n}"
             },
             {
                 "name": "defaultTasks",
@@ -1650,21 +1650,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<PureTaskListComponent>",
-                "defaultValue": "{\n  component: PureTaskListComponent,\n  title: 'PureTaskList',\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      // Import both components to allow component composition with Storybook\n      declarations: [PureTaskListComponent, TaskComponent],\n      imports: [CommonModule],\n    }),\n    // Wraps our stories with a decorator\n    componentWrapperDecorator(\n      (story) => `<div style=\"margin: 3em\">${story}</div>`\n    ),\n  ],\n  render: (args: PureTaskListComponent) => ({\n    props: {\n      ...args,\n      onPinTask: TaskStories.actionsData.onPinTask,\n      onArchiveTask: TaskStories.actionsData.onArchiveTask,\n    },\n  }),\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/components/task/Task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TaskComponent>",
                 "defaultValue": "{\n  title: \"Task\",\n  component: TaskComponent,\n  excludeStories: /.*Data$/,\n  tags: [\"autodocs\"],\n  render: (args: TaskComponent) => ({\n    props: {\n      ...args,\n      onPinTask: actionsData.onPinTask,\n      onArchiveTask: actionsData.onArchiveTask,\n    },\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<PureTaskListComponent>",
+                "defaultValue": "{\n  component: PureTaskListComponent,\n  title: 'PureTaskList',\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      // Import both components to allow component composition with Storybook\n      declarations: [PureTaskListComponent, TaskComponent],\n      imports: [CommonModule],\n    }),\n    // Wraps our stories with a decorator\n    componentWrapperDecorator(\n      (story) => `<div style=\"margin: 3em\">${story}</div>`\n    ),\n  ],\n  render: (args: PureTaskListComponent) => ({\n    props: {\n      ...args,\n      onPinTask: TaskStories.actionsData.onPinTask,\n      onArchiveTask: TaskStories.actionsData.onArchiveTask,\n    },\n  }),\n}"
             },
             {
                 "name": "Pinned",
@@ -1787,8 +1787,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<PureTaskListComponent>",
-                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
+                "rawtype": "StoryObj<TaskComponent>",
+                "file": "src/app/components/task/Task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1798,8 +1798,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<TaskComponent>",
-                "file": "src/app/components/task/Task.stories.ts",
+                "rawtype": "StoryObj<PureTaskListComponent>",
+                "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2184,19 +2184,6 @@
                     "kind": 177
                 }
             ],
-            "src/app/components/pure-task-list/pure-task-list.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<PureTaskListComponent>",
-                    "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "src/app/components/task/Task.stories.ts": [
                 {
                     "name": "Story",
@@ -2204,6 +2191,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TaskComponent>",
                     "file": "src/app/components/task/Task.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "src/app/components/pure-task-list/pure-task-list.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<PureTaskListComponent>",
+                    "file": "src/app/components/pure-task-list/pure-task-list.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
